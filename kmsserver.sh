@@ -53,3 +53,5 @@ cscript.exe    ospp.vbs    /act
 # http://www.kaixinit.com/info/maintenance/3031.html
 # WINDOWS密钥https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys
 # OFFICE密钥https://learn.microsoft.com/zh-cn/office/volume-license-activation/gvlks
+# https://learn.microsoft.com/zh-cn/office/ltsc/2024/deploy
+# configuration.xml can be created from https://config.office.com/deploymentsettings
