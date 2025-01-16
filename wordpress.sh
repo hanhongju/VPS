@@ -126,5 +126,5 @@ chmod      -Rf     755           /srv/wordpress/wp-content/
 
 
 # Wordpress安装脚本 @ Debian 11
-#cron任务须由crontab安装，直接修改配置文件无效
-#wget的-O参数和-cP参数只能二选一
+# cron任务须由crontab安装，直接修改配置文件无效
+# wget的-O参数和-cP参数只能二选一
