@@ -9,7 +9,7 @@ else      echo     "添加SWAP空间，大小4000M"
           echo     '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
 yum         -y          install        wget net-tools
-wget        -c          https://github.com/hanhongju/my_script/raw/master/ewomail-1.15.1b.tar.gz
+wget        -c          https://github.com/hanhongju/VPS/raw/master/ewomail-1.15.1b.tar.gz
 tar         -zxvf       ewomail-1.15.1b.tar.gz
 cd          /root/ewomail/install/
 sed         -i          "s/yum install epel-release.*/yum install epel-release -y/g"         start.sh
