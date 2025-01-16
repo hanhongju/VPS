@@ -1,10 +1,7 @@
 apt     -y    update
 #apt    -y    full-upgrade    &&     apt   -y    autoremove
-apt     -y    install      wget curl zip unzip nginx certbot net-tools mariadb-server python3-pip redis
+apt     -y    install      wget curl zip unzip nginx net-tools mariadb-server python3-pip redis
 apt     -y    install      php-fpm php-mysql php-xml php-curl php-imagick php-mbstring php-zip php-gd php-intl php-redis
-certbot       delete       --noninteractive    --cert-name    www.hanhongju.com
-certbot       certonly     --noninteractive    --domain       www.hanhongju.com    --standalone    --agree-tos    --email     admin@hanhongju.com\
-              --pre-hook   "systemctl stop nginx"   --post-hook   "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
 echo    '
 * * * * *     date          >>          /root/crontest
 0 1 * * *     apt           -y          update
@@ -20,11 +17,6 @@ server {
 server_name www.hanhongju.com;
 listen 80;
 listen [::]:80;
-listen 443 ssl;
-listen [::]:443 ssl;
-ssl_certificate           /etc/letsencrypt/live/www.hanhongju.com/fullchain.pem;
-ssl_certificate_key       /etc/letsencrypt/live/www.hanhongju.com/privkey.pem;
-if  ( $scheme = http )    {return 301 https://$server_name$request_uri;}
 root      /srv/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
