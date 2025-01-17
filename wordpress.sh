@@ -36,6 +36,7 @@ rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 '            >            /etc/nginx/sites-enabled/wordpress.conf
 sed          -i           "/post_max_size/d"                   /etc/php/8.2/fpm/php.ini
 sed          -i           "/upload_max_filesize/d"             /etc/php/8.2/fpm/php.ini
+sed          -i           "/memory_limit/d"                    /etc/php/8.2/fpm/php.ini
 sed          -i           "/max_execution_time/d"              /etc/php/8.2/fpm/php.ini
 echo         "
 upload_max_filesize   = 0
