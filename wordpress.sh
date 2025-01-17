@@ -50,10 +50,6 @@ mysql_secure_installation
 
 
 
-
-
-
-
 setupLNMP () {
 apt     -y    install    wget
 wget    https://raw.githubusercontent.com/hanhongju/VPS/refs/heads/main/wordpress.sh    -O    setup.sh
