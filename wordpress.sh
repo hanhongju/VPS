@@ -39,8 +39,8 @@ sed           -i           "s/upload_max_filesize =.*/upload_max_filesize =200M/
 sed           -i           "/max_execution_time/d"              /etc/php/8.2/fpm/php.ini
 echo          "max_execution_time = 0"                >>        /etc/php/8.2/fpm/php.ini
 echo          "client_header_buffer_size 2048k;   large_client_header_buffers 10 2048k;"     >      /etc/nginx/conf.d/414.conf
-systemctl     enable       nginx
-systemctl     restart      nginx
+systemctl     enable       nginx php8.2-fpm
+systemctl     restart      nginx php8.2-fpm
 nginx         -t
 crontab       -l
 sysctl        -p
