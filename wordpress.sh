@@ -64,16 +64,6 @@ bash    setup.sh
 
 
 
-uninstall () {
-systemctl    stop      nginx
-systemctl    disable   nginx
-netstat      -plnt
-
-}
-
-
-
-
 directbackup () {
 mysqldump     -uroot      -pfengkuang     wordpress     >        /srv/wordpress/wordpress.sql
 mkdir         -p          /root/wordpressbackup/
