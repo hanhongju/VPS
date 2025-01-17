@@ -101,12 +101,7 @@ mysql         -uroot     -pfengkuang     wordpress   <    /srv/wordpress/wordpre
 installanewsite () {
 wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm         -rf     /srv/wordpress/
-tar        -xf     latest-zh_CN.tar.gz       -C     /srv/
-#phpMyAdmin
-wget       -c      https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip
-unzip      phpMyAdmin-5.2.1-all-languages.zip
-rm         -rf     /srv/wordpress/phpmyadmin/
-mv         phpMyAdmin-5.2.1-all-languages           /srv/wordpress/phpmyadmin/
+tar        -xf     latest-zh_CN.tar.gz       -C     /srv
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf     777           /srv/wordpress/
 chown      -Rf     www-data      /srv/wordpress/
