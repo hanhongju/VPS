@@ -1,5 +1,5 @@
 apt     -y    update
-#apt    -y    full-upgrade    &&     apt   -y    autoremove
+# apt   -y    full-upgrade    &&     apt   -y    autoremove
 apt     -y    install      wget curl zip unzip nginx net-tools mariadb-server python3-pip
 apt     -y    install      php-fpm php-mysql php-xml php-curl php-imagick php-mbstring php-zip php-gd php-intl
 echo    '
