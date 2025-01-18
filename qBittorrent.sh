@@ -20,24 +20,5 @@ echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
 
-directsetup () {
-apt    -y    install    wget
-wget   https://raw.githubusercontent.com/hanhongju/my_script/master/qBittorrent.sh    -O    setup.sh
-bash   setup.sh
-
-}
-
-
-
-
-uninstall () {
-systemctl     stop      qbittorrent-nox
-systemctl     disable   qbittorrent-nox
-netstat       -plnt
-
-}
-
-
-
 
 # qBittorrent安装脚本 @ Debian 10
