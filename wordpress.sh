@@ -24,7 +24,6 @@ fastcgi_pass   unix:/run/php/php8.2-fpm.sock;     #遇到502 Bad Gateway时使�
 fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
-client_max_body_size     500M;
 }
 location / {
 if (-f  $request_filename/index.html) {rewrite (.*) $1/index.html break;}
@@ -45,9 +44,10 @@ memory_limit          = 0
 max_execution_time    = 0
 "             >>           /etc/php/8.2/fpm/php.ini
 echo          "
-client_header_buffer_size 2048k;
+client_header_buffer_size      2048k;
 large_client_header_buffers 10 2048k;
-"             >            /etc/nginx/conf.d/414.conf
+client_max_body_size           500M;
+"             >            /etc/nginx/conf.d/http_params.conf
 systemctl     enable       nginx php8.2-fpm
 systemctl     restart      nginx php8.2-fpm
 nginx         -t
