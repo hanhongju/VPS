@@ -48,7 +48,7 @@ cscript.exe    ospp.vbs    /act
 
 
 
-#参考文献
+# 参考文献
 # https://www.wenzika.com/357.html
 # http://www.kaixinit.com/info/maintenance/3031.html
 # WINDOWS密钥https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys
