@@ -4,7 +4,7 @@ sed     -i    "/PasswordAuthentication/d"      /etc/ssh/sshd_config
 echo    '
 PermitRootLogin yes
 PasswordAuthentication yes
-'       >     /etc/ssh/sshd_config.d/convenient.conf
+'       >>    /etc/ssh/sshd_config
 systemctl     restart     sshd
 
 
