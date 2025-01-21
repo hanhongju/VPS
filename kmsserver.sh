@@ -22,31 +22,6 @@ netstat       -plnt
 
 
 
-activate_windows () {
-cd             "C:\Windows\System32"
-cscript.exe    slmgr.vbs    /skms   kms.03k.org
-cscript.exe    slmgr.vbs    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
-cscript.exe    slmgr.vbs    /ato
-
-}
-
-
-
-
-activate_office () {
-cd             "C:\Program Files\Microsoft Office\Office16"
-cd             "C:\Program Files (x86)\Microsoft Office\Office16"
-cscript.exe    ospp.vbs    /dstatus
-cscript.exe    ospp.vbs    /sethst:kms.03k.org
-cscript.exe    ospp.vbs    /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
-cscript.exe    ospp.vbs    /act
-# cscript.exe  ospp.vbs    /unpkey:
-
-}
-
-
-
-
 
 # 参考文献
 # https://www.wenzika.com/357.html
