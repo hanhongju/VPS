@@ -10,7 +10,7 @@ systemctl     restart     sshd
 
 
 
-installpubkey ()   {
+installpubkey () {
 mkdir         /root/.ssh/
 echo    '
 ssh-ed25519   AAAAC3NzaC1lZDI1NTE5AAAAII645EjCCRKn2xs9mpL2HiiLAQYKHOA+nyESQ0qf3VBR
