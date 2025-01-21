@@ -20,5 +20,4 @@ echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
 
-
 # qBittorrent安装脚本 @ Debian 10
