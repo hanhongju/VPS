@@ -1,4 +1,4 @@
-echo          "root:fengkuang"         |        chpasswd
+echo          "root:fengkuang"         |       chpasswd
 sed     -i    "/PermitRootLogin/d"             /etc/ssh/sshd_config
 sed     -i    "/PasswordAuthentication/d"      /etc/ssh/sshd_config
 echo    '
