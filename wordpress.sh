@@ -50,8 +50,8 @@ client_max_body_size           500M;
 systemctl     enable       nginx php8.2-fpm
 systemctl     restart      nginx php8.2-fpm
 nginx         -t
-crontab       -l
 sysctl        -p
+crontab       -l
 netstat       -plnt
 mysql_secure_installation
 
