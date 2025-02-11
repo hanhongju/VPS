@@ -13,7 +13,9 @@ WantedBy=multi-user.target
 '           >          /etc/systemd/system/qbittorrent-nox.service
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
-systemctl   restart    qbittorrent-nox
+systemctl   stop       qbittorrent-nox
+rm          -rf        /.config/qBittorrent/qBittorrent.conf
+systemctl   start      qbittorrent-nox
 netstat     -plnt
 echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
