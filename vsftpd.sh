@@ -1,4 +1,4 @@
-site=cloud1.thenote.live
+site=8.138.172.34
 apt         -y        update    
 apt         -y        install      vsftpd net-tools
 ipv4=$(ping -c 2 $site | head -2 | tail -1 | awk '{print $5}' | sed 's/[(:)]//g')
