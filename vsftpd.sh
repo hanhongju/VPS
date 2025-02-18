@@ -8,7 +8,6 @@ sed        -i      '/listen_ipv6=/d'           /etc/vsftpd.conf
 sed        -i      '/pasv_address=/d'          /etc/vsftpd.conf
 echo       "
 write_enable=YES
-anon_mkdir_write_enable=YES
 listen=YES
 listen_ipv6=NO
 pasv_address=$site
