@@ -1,10 +1,12 @@
 site=8.138.172.34
 apt        -y      update    
-apt        -y      install                     vsftpd net-tools
-sed        -i      '/write_enable=/d'          /etc/vsftpd.conf
-sed        -i      '/listen=/d'                /etc/vsftpd.conf
-sed        -i      '/listen_ipv6=/d'           /etc/vsftpd.conf
-sed        -i      '/pasv_address=/d'          /etc/vsftpd.conf
+apt        -y      install                        vsftpd net-tools
+printf     "\n\n\n\n\n\n\n$(date)\n\n\n"    >>    /etc/vsftpd.conf.bak
+cat        /etc/vsftpd.conf                 >>    /etc/vsftpd.conf.bak
+sed        -i      '/write_enable=/d'             /etc/vsftpd.conf
+sed        -i      '/listen=/d'                   /etc/vsftpd.conf
+sed        -i      '/listen_ipv6=/d'              /etc/vsftpd.conf
+sed        -i      '/pasv_address=/d'             /etc/vsftpd.conf
 echo       "
 write_enable=YES
 listen=YES
