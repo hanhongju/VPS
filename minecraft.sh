@@ -1,4 +1,3 @@
-apt      -y      update
 apt      -y      install      wget default-jdk
 wget     https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar     -cP     /home/mcserverjava/
 echo     'eula=true'      >       /home/mcserverjava/eula.txt
