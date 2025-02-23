@@ -22,4 +22,14 @@ echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
 
+uninstall () {
+apt     -y    remove     qbittorrent-nox
+systemctl     disable    qbittorrent-nox
+systemctl     stop       qbittorrent-nox
+
+}
+
+
+
+
 # qBittorrent安装脚本 @ Debian 10
