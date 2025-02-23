@@ -15,6 +15,7 @@ systemctl   enable     qbittorrent-nox
 systemctl   stop       qbittorrent-nox
 rm          -rf        /.config/qBittorrent/qBittorrent.conf
 systemctl   start      qbittorrent-nox
+sleep       1s
 netstat     -plnt
 echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
