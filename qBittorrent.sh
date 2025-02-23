@@ -13,7 +13,7 @@ WantedBy=multi-user.target
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   stop       qbittorrent-nox
-rm          -rf        /.config/qBittorrent/qBittorrent.conf
+rm          -rf        /.config/qBittorrent/
 systemctl   start      qbittorrent-nox
 sleep       1s
 netstat     -plnt
