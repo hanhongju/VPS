@@ -1,4 +1,3 @@
-apt     -y    update
 apt     -y    install     qbittorrent-nox net-tools
 echo   '
 [Unit]
