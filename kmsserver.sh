@@ -1,4 +1,3 @@
-apt     -y     update
 apt     -y     install    wget
 wget    -c     https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz
 tar     -xf    binaries.tar.gz   -C.
