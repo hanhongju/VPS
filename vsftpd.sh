@@ -1,5 +1,4 @@
 site=8.138.172.34
-apt        -y      update    
 apt        -y      install                        vsftpd net-tools
 cat        /etc/vsftpd.conf                 >>    /etc/vsftpd.conf.bak
 printf     "\n\n$(date)\n\n\n\n\n\n\n\n"    >>    /etc/vsftpd.conf.bak
