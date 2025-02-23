@@ -26,6 +26,7 @@ uninstall () {
 apt     -y    remove     qbittorrent-nox
 systemctl     disable    qbittorrent-nox
 systemctl     stop       qbittorrent-nox
+rm          -rf        /.config/qBittorrent/
 
 }
 
