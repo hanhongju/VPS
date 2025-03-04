@@ -7,7 +7,7 @@ echo    '
 0 3 * * *     apt           -y          autoremove
 0 4 * * *     mkdir         --parents   /root/wordpressbackup/
 0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /srv/wordpress/wordpress.sql
-0 6 * * *     tar           --create    --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar     --directory   /srv/         ./wordpress/
+0 6 * * *     tar           --create    --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar     --directory    /srv/    ./wordpress/
 0 7 * * *     certbot       renew
 '       |     crontab
 echo '
@@ -70,7 +70,7 @@ bash    setup.sh
 directbackup () {
 mysqldump     -uroot      -pfengkuang     wordpress     >        /srv/wordpress/wordpress.sql
 mkdir         --parents   /root/wordpressbackup/
-tar           --create    --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar     --directory    /srv/         ./wordpress/
+tar           --create    --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar     --directory    /srv/    ./wordpress/
 
 }
 
