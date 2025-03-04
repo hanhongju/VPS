@@ -1,6 +1,6 @@
 # apt -y update && DEBIAN_FRONTEND=noninteractive apt-get -y full-upgrade && apt -y autoremove
-apt     -y    install      wget curl zip unzip nginx net-tools mariadb-server python3-pip
-apt     -y    install      php-fpm php-mysql php-xml php-curl php-imagick php-mbstring php-zip php-gd php-intl
+apt     -y    install       wget curl zip unzip nginx net-tools mariadb-server python3-pip
+apt     -y    install       php-fpm php-mysql php-xml php-curl php-imagick php-mbstring php-zip php-gd php-intl
 echo    '
 0 1 * * *     apt    -y     update
 0 2 * * *     apt    -y     full-upgrade
