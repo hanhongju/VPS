@@ -1,4 +1,4 @@
-apt     -y    install     qbittorrent-nox net-tools
+apt    -y    install     qbittorrent-nox net-tools
 echo   '
 [Unit]
 Description=qBittorrent Command Line Client
