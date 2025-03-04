@@ -99,7 +99,6 @@ tar        --extract     --file          latest-zh_CN.tar.gz     --directory    
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      --recursive     777           /srv/wordpress/
 chown      --recursive     www-data      /srv/wordpress/
-chmod      --recursive     755           /srv/wordpress/wp-content/
 
 }
 
