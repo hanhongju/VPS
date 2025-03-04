@@ -7,7 +7,7 @@ echo    '
 0 3 * * *     apt           -y          autoremove
 0 4 * * *     mkdir         -p          /root/wordpressbackup/
 0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /srv/wordpress/wordpress.sql
-0 6 * * *     tar           -cf         /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar        -P       /srv/wordpress/
+0 6 * * *     tar           --create    --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar     --directory   /srv/         ./wordpress/
 0 7 * * *     certbot       renew
 '       |     crontab
 echo '
