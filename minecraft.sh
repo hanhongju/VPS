@@ -1,13 +1,13 @@
 apt      -y      install      wget default-jdk
-wget     -c      https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar     -P     /home/mcserverjava/
-echo     'eula=true'      >       /home/mcserverjava/eula.txt
+wget     -c      https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar     -P     /root/mcserverjava/
+echo     'eula=true'      >       /root/mcserverjava/eula.txt
 echo     ' 
 [Unit]
 Description=Minecraft server
 [Service]
 Type=simple
-WorkingDirectory=/home/mcserverjava/
-ExecStart=java     -jar    /home/mcserverjava/server.jar     nogui
+WorkingDirectory=/root/mcserverjava/
+ExecStart=java     -jar    /root/mcserverjava/server.jar     nogui
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
@@ -20,9 +20,9 @@ systemctl     restart      mcserver
 
 
 #备份服务器
-tar           --create       --file          /home/mcjava.tar     --directory    /home/    ./mcserverjava/
+tar           --create       --file          /root/mcjava.tar     --directory    /root/    ./mcserverjava/
 #还原服务器
-tar           --extract      --file          /home/mcjava.tar     --directory    /home/
+tar           --extract      --file          /root/mcjava.tar     --directory    /root/
 
 
 
