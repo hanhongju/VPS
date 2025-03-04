@@ -93,7 +93,7 @@ mysql         -uroot         -pfengkuang     wordpress   <    /srv/wordpress/wor
 
 
 installanewsite () {
-wget          --continue     https://cn.wordpress.org/latest-zh_CN.tar.gz
+wget          -c             https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm            --recursive    --force         /srv/wordpress/
 tar           --extract      --file          latest-zh_CN.tar.gz    --directory      /srv/
 # 网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
