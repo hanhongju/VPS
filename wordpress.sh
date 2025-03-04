@@ -85,7 +85,7 @@ mysql         -uroot         -pfengkuang     -e      "CREATE DATABASE wordpress"
 mysql         -uroot         -pfengkuang     -e      "SHOW DATABASEs"
 systemctl     enable         mariadb
 systemctl     restart        mariadb
-mysql         -uroot         -pfengkuang      wordpress   <    /srv/wordpress/wordpress.sql
+mysql         -uroot         -pfengkuang     wordpress   <    /srv/wordpress/wordpress.sql
 
 }
 
