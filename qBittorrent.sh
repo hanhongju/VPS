@@ -13,7 +13,7 @@ WantedBy=multi-user.target
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   stop       qbittorrent-nox
-rm          --recursive    --force     /.config/qBittorrent/
+rm          -rf        /.config/qBittorrent/
 systemctl   start      qbittorrent-nox
 sleep       1s
 netstat     -plnt
@@ -26,7 +26,7 @@ uninstall () {
 apt   -y    remove     qbittorrent-nox
 systemctl   disable    qbittorrent-nox
 systemctl   stop       qbittorrent-nox
-rm          --recursive    --force     /.config/qBittorrent/
+rm          -rf        /.config/qBittorrent/
 
 }
 
