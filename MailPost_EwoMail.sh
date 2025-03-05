@@ -3,10 +3,10 @@ sed       -i       "s/SELINUX=.*/SELINUX=disabled/g"        /etc/sysconfig/selin
 if        [[   $(free  -m  |  awk   'NR==3{print $2}'   2>&1)    >   3000   ]]
 then      echo     "已经有SWAP，无需重复配置"
 else      echo     "添加SWAP空间，大小4000M"
-          dd       if=/dev/zero of=/mnt/swap bs=1M count=4000
-          mkswap   /mnt/swap
-          swapon   /mnt/swap
-          echo     '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
+          dd       if=/dev/zero of=/swap.img bs=1M count=4000
+          mkswap   /swap.img
+          swapon   /swap.img
+          echo    '/swap.img  none  swap  defaults  0  0'  >>  /etc/fstab
 fi
 yum         -y          install        wget net-tools
 wget        -c          https://github.com/hanhongju/VPS/raw/refs/heads/main/ewomail-1.15.1b.tar.gz
