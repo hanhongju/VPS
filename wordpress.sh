@@ -70,7 +70,7 @@ bash    setup.sh
 directbackup () {
 mysqldump     -uroot         -pfengkuang     wordpress       >        /srv/wordpress/wordpress.sql
 mkdir         -p             /root/wordpressbackup/
-tar           --create       --directory     /srv/   --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar    ./wordpress/
+tar           --create       --directory     /srv/   --file     /root/wordpress.tar    ./wordpress/
 
 }
 
@@ -78,7 +78,7 @@ tar           --create       --directory     /srv/   --file     /root/wordpressb
 
 
 importbackup () {
-tar           --extract      --directory     /srv/   --file     wordpress.tar
+tar           --extract      --directory     /srv/   --file     /root/wordpress.tar
 mysql         -uroot         -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 mysql         -uroot         -pfengkuang     -e      "DROP DATABASE wordpress"
 mysql         -uroot         -pfengkuang     -e      "CREATE DATABASE wordpress"
