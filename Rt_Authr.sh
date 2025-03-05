@@ -1,5 +1,5 @@
 echo    "root:fengkuang"   |   chpasswd
-mkdir   --parents     /root/.ssh/
+mkdir   -p    /root/.ssh/
 sed     -i    "/PermitRootLogin/d"             /etc/ssh/sshd_config
 sed     -i    "/PasswordAuthentication/d"      /etc/ssh/sshd_config
 echo    'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII645EjCCRKn2xs9mpL2HiiLAQYKHOA+nyESQ0qf3VBR'       >     /root/.ssh/authorized_keys
