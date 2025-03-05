@@ -69,7 +69,6 @@ bash    setup.sh
 
 directbackup () {
 mysqldump     -uroot         -pfengkuang     wordpress       >        /srv/wordpress/wordpress.sql
-mkdir         -p             /root/wordpressbackup/
 tar           --create       --directory     /srv/   --file     /root/wordpress.tar    ./wordpress/
 
 }
