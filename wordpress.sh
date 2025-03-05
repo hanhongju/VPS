@@ -70,7 +70,7 @@ bash    setup.sh
 directbackup () {
 mysqldump     -uroot         -pfengkuang     wordpress       >        /srv/wordpress/wordpress.sql
 mkdir         --parents      /root/wordpressbackup/
-tar           --create       --file          /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar     --directory    /srv/    ./wordpress/
+tar           --create       --directory     /srv/   --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar    ./wordpress/
 
 }
 
@@ -78,7 +78,7 @@ tar           --create       --file          /root/wordpressbackup/$(date +\%Y-\
 
 
 importbackup () {
-tar           --extract      --file          wordpress.tar          --directory      /srv/
+tar           --extract      --directory     /srv/   --file     wordpress.tar
 mysql         -uroot         -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 mysql         -uroot         -pfengkuang     -e      "DROP DATABASE wordpress"
 mysql         -uroot         -pfengkuang     -e      "CREATE DATABASE wordpress"
@@ -95,7 +95,7 @@ mysql         -uroot         -pfengkuang     wordpress   <    /srv/wordpress/wor
 installanewsite () {
 wget          -c             https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm            --recursive    --force         /srv/wordpress/
-tar           --extract      --file          latest-zh_CN.tar.gz    --directory      /srv/
+tar           --extract      --directory     /srv/   --file     latest-zh_CN.tar.gz
 # 网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod         --recursive     777            /srv/wordpress/
 chown         --recursive     www-data       /srv/wordpress/
