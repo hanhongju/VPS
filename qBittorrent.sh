@@ -13,7 +13,7 @@ WantedBy=multi-user.target
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   stop       qbittorrent-nox
-rm          -rf        /.config/qBittorrent/
+rm          -r        /.config/qBittorrent/
 systemctl   start      qbittorrent-nox
 sleep       1s
 netstat     -plnt
@@ -23,7 +23,7 @@ echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
 uninstall () {
-apt   -y    remove     qbittorrent-nox
+apt   -y    purge      qbittorrent-nox
 systemctl   disable    qbittorrent-nox
 systemctl   stop       qbittorrent-nox
 rm          -rf        /.config/qBittorrent/
