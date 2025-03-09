@@ -7,7 +7,7 @@ echo    '
 0 3 * * *     apt    -y     autoremove
 0 4 * * *     mysqldump     -uroot         -pfengkuang     wordpress       >        /srv/wordpress/wordpress.sql
 0 5 * * *     mkdir         -p             /root/wordpressbackup/
-0 6 * * *     tar           --create       --directory     /srv/   --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar    ./wordpress/
+0 6 * * *     tar           --create       --file     /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar     --directory     /srv/     ./wordpress/
 0 7 * * *     certbot       renew
 '       |     crontab
 echo '
@@ -69,7 +69,7 @@ bash    setup.sh
 
 directbackup () {
 mysqldump     -uroot         -pfengkuang     wordpress       >        /srv/wordpress/wordpress.sql
-tar           --create       --directory     /srv/   --file     /root/wordpress.tar    ./wordpress/
+tar           --create       --file     /root/wordpress.tar     --directory     /srv/     ./wordpress/ 
 
 }
 
@@ -77,7 +77,7 @@ tar           --create       --directory     /srv/   --file     /root/wordpress.
 
 
 importbackup () {
-tar           --extract      --directory     /srv/   --file     /root/wordpress.tar
+tar           --extract      --file     /root/wordpress.tar     --directory     /srv/
 mysql         -uroot         -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 mysql         -uroot         -pfengkuang     -e      "DROP DATABASE wordpress"
 mysql         -uroot         -pfengkuang     -e      "CREATE DATABASE wordpress"
@@ -94,7 +94,7 @@ mysql         -uroot         -pfengkuang     wordpress   <    /srv/wordpress/wor
 installanewsite () {
 wget          -c             https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm            -rf            /srv/wordpress/
-tar           --extract      --directory     /srv/   --file     latest-zh_CN.tar.gz
+tar           --extract      --file     latest-zh_CN.tar.gz     --directory     /srv/
 # 网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod         --recursive    777            /srv/wordpress/
 chown         --recursive    www-data       /srv/wordpress/
