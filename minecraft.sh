@@ -1,7 +1,8 @@
-apt      -y      install      wget default-jdk
-wget     -c      https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar     -P     /root/mcserverjava/
-echo     'eula=true'      >       /root/mcserverjava/eula.txt
-echo     ' 
+apt     -y    update
+apt     -y    install      wget default-jdk
+wget    -c    https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar     -P     /root/mcserverjava/
+echo    'eula=true'      >       /root/mcserverjava/eula.txt
+echo    ' 
 [Unit]
 Description=Minecraft server
 [Service]
