@@ -1,7 +1,7 @@
 apt     -y    update
 apt     -y    install    wget
 wget    -c    https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz
-tar           --extract     --file     binaries.tar.gz     --directory     /root/
+tar     --file     binaries.tar.gz     --directory     /root/         --extract
 cp      -f    /root/binaries/Linux/intel/static/vlmcsd-x86-musl-static     /usr/bin/vlmcsd
 echo    '
 [Unit]
