@@ -21,9 +21,9 @@ systemctl     restart      mcserver
 
 
 #备份服务器
-tar           --create      --file     /root/mcjava.tar     --directory     /root/     ./mcserverjava/
+tar     --file     /root/mcjava.tar     --directory     /root/       --create     ./mcserverjava/
 #还原服务器
-tar           --extract     --file     /root/mcjava.tar     --directory     /root/
+tar     --file     /root/mcjava.tar     --directory     /root/       --extract
 
 
 
