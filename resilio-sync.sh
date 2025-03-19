@@ -20,4 +20,5 @@ netstat    -plnt
 
 
 
-#私有云盘resilio-sync服务器搭建 @ Debian
+# 私有云盘resilio-sync服务器搭建 @ Debian
+# 手机SYNC APP要将自启动和开机启动打开，自动休眠和省电策略关闭
