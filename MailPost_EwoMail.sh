@@ -44,3 +44,4 @@ bash    setup.sh
 
 
 # EwoMail 安装脚本 @ CentOS 7
+# 邮箱管理后台端口8010
