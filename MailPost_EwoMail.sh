@@ -28,7 +28,6 @@ systemctl   stop        clamd@amavisd
 systemctl   disable     clamd@amavisd
 systemctl   restart     postfix dovecot nginx amavisd
 netstat     -plnt
-echo        "后台管理端口为8010，账户为admin，密码为ewomail123。"
 
 
 
@@ -44,4 +43,4 @@ bash    setup.sh
 
 
 # EwoMail 安装脚本 @ CentOS 7
-# 邮箱管理后台端口8010
+# 后台管理端口为8010，账户为admin，密码为ewomail123
