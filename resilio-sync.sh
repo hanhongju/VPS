@@ -1,9 +1,7 @@
 apt       -y    update
-apt       -y    install    wget curl
-wget      https://github.com/hanhongju/proxy/raw/refs/heads/master/trojanclient.sh    -O    setup.sh
-bash      setup.sh
-curl      --location           --continue-at -        --socks5-hostname 127.0.0.1:4000       \
-          --remote-name        https://download-cdn.resilio.com/2.7.3.1381/Debian/resilio-sync_2.7.3.1381-1_amd64.deb
+apt       -y    install    curl
+curl      --location       --continue-at -        --socks5-hostname 127.0.0.1:4000       \
+          --remote-name    https://download-cdn.resilio.com/2.7.3.1381/Debian/resilio-sync_2.7.3.1381-1_amd64.deb
 apt       -y    install    ./resilio-sync_2.7.3.1381-1_amd64.deb
 chmod     -R    777   /home/rslsync/
 usermod   -aG   rslsync   hj
