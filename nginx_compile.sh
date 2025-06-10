@@ -14,7 +14,7 @@ cd               nginx-1.28.0
             --with-http_mp4_module --with-http_random_index_module --with-http_realip_module --with-http_secure_link_module \
             --with-http_slice_module --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module \
             --with-http_v2_module --with-mail --with-mail_ssl_module --with-stream --with-stream_realip_module \
-            --with-stream_ssl_module --with-stream_ssl_preread_module 
+            --with-stream_ssl_module --with-stream_ssl_preread_module
 make
 make install
 useradd  www
