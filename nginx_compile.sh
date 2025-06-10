@@ -1,4 +1,5 @@
-apt update
+apt  -y    purge nginx
+apt        update
 apt  -y    install  libpcre3 libpcre3-dev build-essential zlib1g-dev openssl libssl-dev
 wget -c    https://nginx.org/download/nginx-1.28.0.tar.gz
 tar  -zxvf nginx-1.28.0.tar.gz
