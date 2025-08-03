@@ -1,5 +1,5 @@
 apt       -y    update
-apt       -y    install    curl
+apt       -y    install    curl net-tools
 curl      --location       --continue-at -            \
           --remote-name    https://download-cdn.resilio.com/2.7.3.1381/Debian/resilio-sync_2.7.3.1381-1_amd64.deb   #   --socks5-hostname 127.0.0.1:4000
 apt       -y    install    ./resilio-sync_2.7.3.1381-1_amd64.deb
