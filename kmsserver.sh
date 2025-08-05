@@ -1,6 +1,7 @@
 apt     -y    update
-apt     -y    install    wget
-wget    -c    https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz
+apt     -y    install    curl net-tools
+curl    --location       --continue-at -            \
+        --remote-name    https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz      --socks5-hostname 127.0.0.1:4000
 tar     --file     binaries.tar.gz     --directory     /root/         --extract
 cp      -f    /root/binaries/Linux/intel/static/vlmcsd-x86-musl-static     /usr/bin/vlmcsd
 echo    '
