@@ -43,7 +43,7 @@ bash    setup.sh
 
 
 configure_repo_in_centos7 () {
-rm   -f   /etc/yum.repos.d/*
+rm    -f    /etc/yum.repos.d/*
 echo  '
 [base]
 name=CentOS-$releasever - Base
@@ -69,7 +69,7 @@ baseurl=https://vault.centos.org/7.9.2009/centosplus/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled=0
-'   >    /etc/yum.repos.d/CentOS-Base.repo
+'       >       /etc/yum.repos.d/CentOS-Base.repo
 
 }
 
