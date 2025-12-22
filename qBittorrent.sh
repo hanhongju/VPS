@@ -1,5 +1,5 @@
 apt     -y    update
-apt     -y    install     qbittorrent-nox net-tools
+apt     -y    install       qbittorrent-nox net-tools
 echo    '
 0 1 * * *     apt    -y     update
 0 2 * * *     apt    -y     full-upgrade
