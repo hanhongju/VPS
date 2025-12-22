@@ -1,6 +1,12 @@
 apt     -y    update
 apt     -y    install     qbittorrent-nox net-tools
 echo    '
+0 1 * * *     apt    -y     update
+0 2 * * *     apt    -y     full-upgrade
+0 3 * * *     apt    -y     autoremove
+0 * * * *     pkill         tcrond
+'       |     crontab
+echo    '
 [Unit]
 Description=qBittorrent Command Line Client
 After=network.target
@@ -18,6 +24,7 @@ rm          -rf        /.config/qBittorrent/
 systemctl   start      qbittorrent-nox
 sleep       1s
 netstat     -plnt
+crontab     -l
 echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
