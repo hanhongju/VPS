@@ -13,7 +13,6 @@ echo    '
 '       |     crontab
 echo '
 server {
-server_name www.hanhongju.com;
 listen 80;
 listen [::]:80;
 root      /srv/wordpress/;
@@ -31,7 +30,7 @@ if (!-f $request_filename)            {rewrite (.*)   /index.php;}
 }
 rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 }
-'            >            /etc/nginx/sites-enabled/wordpress.conf
+'            >            /etc/nginx/sites-enabled/default
 sed          -i           "/post_max_size/d"                   /etc/php/8.2/fpm/php.ini
 sed          -i           "/upload_max_filesize/d"             /etc/php/8.2/fpm/php.ini
 sed          -i           "/memory_limit/d"                    /etc/php/8.2/fpm/php.ini
@@ -99,6 +98,37 @@ tar           --file         latest-zh_CN.tar.gz     --directory      /srv/     
 # 网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod         --recursive    777            /srv/wordpress/
 chown         --recursive    www-data       /srv/wordpress/
+
+}
+
+
+
+
+reverse_proxy_host () {
+apt    -y    update
+apt    -y    install      nginx net-tools
+echo         '
+server{
+set $proxy_name   110.41.3.136;
+resolver 8.8.8.8 8.8.4.4 valid=300s;
+listen 80 default_server;
+listen [::]:80 default_server;
+location /          {
+sub_filter   $proxy_name   $host;
+sub_filter_once off;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Referer http://$proxy_name;
+proxy_set_header Host $proxy_name;
+proxy_pass http://$proxy_name;
+proxy_set_header Accept-Encoding "";
+}
+}
+'           >           /etc/nginx/sites-enabled/default
+systemctl   enable      nginx
+systemctl   restart      nginx
+nginx       -t
+netstat     -plnt
 
 }
 
