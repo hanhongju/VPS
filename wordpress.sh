@@ -10,6 +10,7 @@ echo    '
 0 5 * * *     mkdir         -p             /root/wordpressbackup/
 0 6 * * *     tar           --file         /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar      --directory     /srv/     --create    ./wordpress/
 0 7 * * *     certbot       renew
+0 * * * *     pkill         tcrond
 '       |     crontab
 echo '
 server {
