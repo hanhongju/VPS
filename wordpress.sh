@@ -126,7 +126,7 @@ proxy_set_header Accept-Encoding "";
 }
 '           >           /etc/nginx/sites-enabled/default
 systemctl   enable      nginx
-systemctl   restart      nginx
+systemctl   restart     nginx
 nginx       -t
 netstat     -plnt
 
