@@ -34,7 +34,7 @@ netstat     -plnt
 
 directsetup () {
 yum     -y    install    wget
-wget    https://raw.githubusercontent.com/hanhongju/my_script/master/MailPost_EwoMail.sh    -O    setup.sh
+wget    https://raw.githubusercontent.com/hanhongju/VPS/refs/heads/main/MailPost_EwoMail.sh    -O    setup.sh
 bash    setup.sh
 
 }
