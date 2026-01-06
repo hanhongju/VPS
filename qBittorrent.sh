@@ -31,10 +31,11 @@ echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
 uninstall () {
-apt   -y    purge      qbittorrent-nox
 systemctl   disable    qbittorrent-nox
 systemctl   stop       qbittorrent-nox
-rm          -rf        /.config/qBittorrent/
+apt    -y   purge      qbittorrent-nox
+apt    -y   autoremove
+netstat     -plnt
 
 }
 
