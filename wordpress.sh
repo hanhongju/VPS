@@ -107,8 +107,10 @@ chown         --recursive    www-data       /srv/wordpress/
 reverse_proxy_host () {
 apt    -y    update
 apt    -y    install      nginx net-tools
+rm     -f    /etc/nginx/sites-enabled/default
 echo         '
 server{
+server_name  www.hanhongju.com;
 set $proxy_name   110.41.3.136;
 listen 80;
 listen [::]:80;
@@ -123,7 +125,7 @@ proxy_pass http://$proxy_name;
 proxy_set_header Accept-Encoding "";
 }
 }
-'           >           /etc/nginx/sites-enabled/default
+'           >           /etc/nginx/sites-enabled/www
 systemctl   enable      nginx
 systemctl   restart     nginx
 nginx       -t
