@@ -112,6 +112,7 @@ echo         '
 server{
 server_name  www.hanhongju.com;
 set $proxy_name   110.41.3.136;
+resolver 8.8.8.8 8.8.4.4 valid=300s;
 listen 80;
 listen [::]:80;
 location /          {
