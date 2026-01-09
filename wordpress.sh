@@ -111,8 +111,9 @@ apt    -y    install      nginx net-tools
 rm     -f    /etc/nginx/sites-enabled/default
 echo         '
 server{
-server_name  www.hanhongju.com;
-set $proxy_name   8.138.172.34:80;
+server_name     www.hanhongju.com;
+resolver        8.8.8.8 8.8.4.4 valid=300s;
+set $proxy_name 8.138.172.34:80;
 listen 80;
 listen [::]:80;
 location /          {
