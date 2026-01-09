@@ -112,13 +112,13 @@ rm     -f    /etc/nginx/sites-enabled/default
 echo         '
 server{
 server_name  www.hanhongju.com;
-set $proxy_name   8.138.172.34;
+set $proxy_name   8.138.172.34:80;
 listen 80;
 listen [::]:80;
 location /          {
 proxy_pass       http://$proxy_name;
 sub_filter       $proxy_name  $host;
-proxy_set_header Host $proxy_name;
+proxy_set_header Host $proxy_name:$server_port;
 proxy_set_header X-Real-IP $remote_addr;
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 proxy_set_header Referer $http_referer;
