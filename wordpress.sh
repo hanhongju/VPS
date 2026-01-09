@@ -117,13 +117,13 @@ resolver 8.8.8.8 8.8.4.4 valid=300s;
 listen 80;
 listen [::]:80;
 location /          {
+proxy_pass   http://$proxy_name;
 sub_filter   $proxy_name   $host;
 sub_filter_once off;
+proxy_set_header Host $proxy_name;
 proxy_set_header X-Real-IP $remote_addr;
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header Referer http://$proxy_name;
-proxy_set_header Host $proxy_name;
-proxy_pass http://$proxy_name;
+proxy_set_header Referer $http_referer;
 proxy_set_header Accept-Encoding "";
 }
 }
