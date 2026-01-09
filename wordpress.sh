@@ -111,12 +111,12 @@ apt    -y    install      nginx net-tools
 rm     -f    /etc/nginx/sites-enabled/default
 echo         '
 server{
-server_name     www.hanhongju.com;
-resolver        8.8.8.8;
+server_name www.hanhongju.com;
+resolver 8.8.8.8;
 set $proxy_name 8.138.172.34:80;
 listen 80;
 listen [::]:80;
-location /          {
+location / {
 proxy_pass       http://$proxy_name;
 proxy_set_header Host   $proxy_name:$server_port;
 proxy_set_header X-Real-IP $remote_addr;
