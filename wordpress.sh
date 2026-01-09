@@ -106,10 +106,11 @@ chown         --recursive    www-data       /srv/wordpress/
 
 
 reverse_proxy_host () {
-apt    -y    update
-apt    -y    install      nginx net-tools
-rm     -f    /etc/nginx/sites-enabled/default
-echo         '
+apt    -y   update
+apt    -y   install      nginx net-tools
+systemctl   enable      nginx
+rm     -f   /etc/nginx/sites-enabled/default
+echo        '
 server{
 server_name www.hanhongju.com;
 resolver 8.8.8.8;
@@ -121,12 +122,11 @@ proxy_pass       http://$proxy_name;
 proxy_set_header Host   $proxy_name:$server_port;
 proxy_set_header X-Real-IP $remote_addr;
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header Referer $http_referer;
+proxy_set_header Referer $scheme://$proxy_name;
 proxy_set_header Accept-Encoding "";
 }
 }
 '           >           /etc/nginx/sites-enabled/www
-systemctl   enable      nginx
 systemctl   restart     nginx
 nginx       -t
 netstat     -plnt
