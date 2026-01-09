@@ -15,7 +15,6 @@ echo    '
 echo '
 server {
 listen 80;
-listen [::]:80;
 root      /srv/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
@@ -116,7 +115,6 @@ server_name www.hanhongju.com;
 resolver 8.8.8.8;
 set $proxy_name 8.138.172.34:80;
 listen 80;
-listen [::]:80;
 location / {
 proxy_pass       http://$proxy_name;
 proxy_set_header Host   $proxy_name:$server_port;
