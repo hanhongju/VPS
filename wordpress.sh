@@ -15,6 +15,8 @@ echo    '
 echo '
 server {
 listen 80;
+# listen [::]:443 ssl;
+# if  ( $scheme = http )    {return 301 https://$server_name$request_uri;}
 root      /srv/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
