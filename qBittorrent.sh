@@ -1,3 +1,4 @@
+# Debian 10
 apt     -y    update
 apt     -y    install       qbittorrent-nox net-tools
 echo    '
@@ -42,4 +43,49 @@ netstat     -plnt
 
 
 
-# qBittorrent安装脚本 @ Debian 10
+# CentOS 7
+yum -y update
+yum -y install qbittorrent-nox net-tools
+systemctl stop firewalld
+systemctl disable firewalld
+echo    '
+0 1 * * *     yum clean all
+0 2 * * *     yum makecache
+0 * * * *     pkill         tcrond
+'       |     crontab
+echo    '
+[Unit]
+Description=qBittorrent Command Line Client
+After=network.target
+[Service]
+Type=forking
+ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8088
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+'           >          /etc/systemd/system/qbittorrent-nox.service
+systemctl   daemon-reload
+systemctl   enable     qbittorrent-nox
+systemctl   stop       qbittorrent-nox
+rm          -rf        /.config/qBittorrent/
+systemctl   start      qbittorrent-nox
+sleep       1s
+netstat     -plnt
+crontab     -l
+echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
+
+
+
+
+uninstall () {
+systemctl   disable    qbittorrent-nox
+systemctl   stop       qbittorrent-nox
+yum    -y   remove     qbittorrent-nox
+netstat     -plnt
+
+}
+
+
+
+
+# qBittorrent安装脚本
