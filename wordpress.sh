@@ -116,9 +116,6 @@ server{
 server_name www.hanhongju.com;
 resolver 8.8.8.8;
 set $proxy_name 8.138.172.34:80;
-# http://{ip_address}:{port}
-# https://{ip_address}:{port} ，会由于证书和域名的不匹配而导致浏览器警告甚至拦截
-# https://{domain}:{port} ，这种写法是不支持的
 listen 80;
 location / {
 proxy_pass       http://$proxy_name;
@@ -142,3 +139,4 @@ netstat     -plnt
 # Wordpress安装脚本 @ Debian 11
 # cron任务须由crontab安装，直接修改配置文件无效
 # wget的-O参数和-cP参数只能二选一
+# 在非443端口下配置HTTPS协议   https://47saikyo.moe/Article/Web/%E5%9C%A8%E9%9D%9E443%E7%AB%AF%E5%8F%A3%E4%B8%8B%E9%85%8D%E7%BD%AEHTTPS%E5%8D%8F%E8%AE%AE/
