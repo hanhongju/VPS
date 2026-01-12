@@ -45,9 +45,9 @@ netstat     -plnt
 
 # CentOS 7
 yum     -y    makecache
-yum     -y    install qbittorrent-nox net-tools
-systemctl     stop    firewalld
-systemctl     disable firewalld
+yum     -y    install       qbittorrent-nox net-tools
+systemctl     stop          firewalld
+systemctl     disable       firewalld
 echo    '
 0 1 * * *     yum    -y     makecache
 0 2 * * *     yum    -y     update
