@@ -28,8 +28,8 @@ yum       -y    install    curl net-tools
 curl      --location       --continue-at -            \
           --remote-name    https://download-cdn.resilio.com/stable/rpm/x86_64/0/resilio-sync-2.8.1.1390-1.x86_64.rpm
 yum       -y    install    ./resilio-sync-2.8.1.1390-1.x86_64.rpm
-systemctl       stop          firewalld
-systemctl       disable       firewalld
+systemctl       stop       firewalld
+systemctl       disable    firewalld
 mkdir     -p    /home/rslsync/
 chmod     -R    777   /home/rslsync/
 usermod   -aG   rslsync   hj
