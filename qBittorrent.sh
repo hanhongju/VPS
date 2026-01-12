@@ -44,15 +44,15 @@ netstat     -plnt
 
 
 # CentOS 7
-yum           makecache
+yum     -y    makecache
 yum     -y    install qbittorrent-nox net-tools
 systemctl     stop    firewalld
 systemctl     disable firewalld
 echo    '
-0 1 * * *     yum       makecache
-0 2 * * *     yum  -y   update
-0 3 * * *     yum       clean    all
-0 * * * *     pkill     tcrond
+0 1 * * *     yum    -y     makecache
+0 2 * * *     yum    -y     update
+0 3 * * *     yum    -y     clean    all
+0 * * * *     pkill         tcrond
 '       |     crontab
 echo    '
 [Unit]
