@@ -23,7 +23,7 @@ netstat    -plnt
 
 
 # CentOS 7
-yum       -y    update
+yum       -y    makecache
 yum       -y    install    curl net-tools
 curl      --location       --continue-at -            \
           --remote-name    https://download-cdn.resilio.com/stable/rpm/x86_64/0/resilio-sync-2.8.1.1390-1.x86_64.rpm
