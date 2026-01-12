@@ -46,4 +46,14 @@ netstat    -plnt
 
 
 
+uninstall () {
+systemctl   disable    resilio-sync
+systemctl   stop       resilio-sync
+netstat     -plnt
+
+}
+
+
+
+
 # 私有云盘resilio-sync服务器搭建
