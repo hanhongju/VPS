@@ -108,7 +108,7 @@ chown         --recursive    www-data       /srv/wordpress/
 
 reverse_proxy_host () {
 apt    -y   update
-apt    -y   install      nginx net-tools
+apt    -y   install     nginx net-tools
 systemctl   enable      nginx
 rm     -f   /etc/nginx/sites-enabled/default
 echo        '
