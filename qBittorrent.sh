@@ -11,7 +11,7 @@ echo    '
 Description=qBittorrent Command Line Client
 After=network.target
 [Service]
-Type=simple
+Type=forking
 User=root
 Group=root
 UMask=007
