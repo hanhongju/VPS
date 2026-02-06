@@ -12,7 +12,7 @@ Description=qBittorrent Command Line Client
 After=network.target
 [Service]
 Type=simple
-ExecStart=/usr/bin/qbittorrent-nox --webui-port=8088
+ExecStart=/usr/bin/qbittorrent-nox
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
