@@ -48,6 +48,7 @@ systemctl   disable    qbittorrent-nox
 systemctl   stop       qbittorrent-nox
 apt    -y   purge      qbittorrent-nox
 apt    -y   autoremove
+rm          -rf        /.config/qBittorrent/
 netstat     -plnt
 
 }
