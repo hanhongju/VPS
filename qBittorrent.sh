@@ -23,13 +23,6 @@ systemctl   start      qbittorrent-nox
 sleep       1s
 systemctl   stop       qbittorrent-nox
 echo    '
-[BitTorrent]
-Session\Port=51291
-Session\QueueingSystemEnabled=false
-[Meta]
-MigrationVersion=4
-[Network]
-Cookies=@Invalid()
 [Preferences]
 WebUI\Port=8088
 WebUI\Username=hhj
