@@ -19,6 +19,7 @@ WantedBy=multi-user.target
 '           >          /etc/systemd/system/qbittorrent-nox.service
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
+systemctl   start      qbittorrent-nox
 systemctl   stop       qbittorrent-nox
 echo    '
 [BitTorrent]
