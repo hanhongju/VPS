@@ -11,7 +11,7 @@ echo    '
 Description=qBittorrent Command Line Client
 After=network.target
 [Service]
-Type=forking
+Type=simple
 ExecStart=/usr/bin/qbittorrent-nox --webui-port=8088
 Restart=on-failure
 [Install]
