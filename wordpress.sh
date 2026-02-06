@@ -47,8 +47,8 @@ client_header_buffer_size      2048k;
 large_client_header_buffers 10 2048k;
 client_max_body_size           500M;
 "             >            /etc/nginx/conf.d/http_params.conf
-systemctl     enable       nginx php8.2-fpm
-systemctl     restart      nginx php8.2-fpm
+systemctl     enable       nginx php8.2-fpm mariadb
+systemctl     restart      nginx php8.2-fpm mariadb
 nginx         -t
 sysctl        -p
 crontab       -l
