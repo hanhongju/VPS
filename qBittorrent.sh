@@ -12,9 +12,6 @@ Description=qBittorrent Command Line Client
 After=network.target
 [Service]
 Type=forking
-User=root
-Group=root
-UMask=007
 WorkingDirectory=/root/.config/qBittorrent
 ExecStart=/usr/bin/qbittorrent-nox --webui-port=8080
 Restart=on-failure
