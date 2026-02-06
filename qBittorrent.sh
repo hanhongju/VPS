@@ -21,7 +21,7 @@ systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   stop       qbittorrent-nox
 rm          -rf        /.config/qBittorrent/
-systemctl   start      qbittorrent-nox
+systemctl   restart    qbittorrent-nox
 sleep       1s
 netstat     -plnt
 crontab     -l
@@ -68,7 +68,7 @@ systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   stop       qbittorrent-nox
 rm          -rf        /.config/qBittorrent/
-systemctl   start      qbittorrent-nox
+systemctl   restart    qbittorrent-nox
 sleep       1s
 netstat     -plnt
 crontab     -l
