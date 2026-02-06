@@ -20,6 +20,7 @@ WantedBy=multi-user.target
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   start      qbittorrent-nox
+sleep       1s
 systemctl   stop       qbittorrent-nox
 echo    '
 [BitTorrent]
@@ -35,9 +36,8 @@ WebUI\Username=hhj
 WebUI\Password_PBKDF2="@ByteArray(vMQ1gRacoWeG9CCWbQes1Q==:A63s5lX9y+Agutul89glKcA7ttZzvnNi0xhfLksSdZb0zdxQfKpZFXpLtI3mOMdFB1NsGngImB/Q6zLg2AVrQg==)"
 '           >           /.config/qBittorrent/qBittorrent.conf
 systemctl   restart     qbittorrent-nox
-sleep       1s
-netstat     -plnt
 crontab     -l
+netstat     -plnt
 echo        "用户名hhj，密码fengkuang，默认下载目录/Downloads/"
 
 
