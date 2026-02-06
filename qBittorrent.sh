@@ -20,7 +20,6 @@ WantedBy=multi-user.target
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   stop       qbittorrent-nox
-rm          -f         /.config/qBittorrent/qBittorrent.conf
 echo    '
 [BitTorrent]
 Session\Port=51291
