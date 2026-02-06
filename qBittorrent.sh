@@ -11,9 +11,12 @@ echo    '
 Description=qBittorrent Command Line Client
 After=network.target
 [Service]
-Type=forking
+Type=simple
+User=root
+Group=root
+UMask=007
 WorkingDirectory=/root/.config/qBittorrent
-ExecStart=/usr/bin/qbittorrent-nox --webui-port=8080
+ExecStart=/usr/bin/qbittorrent-nox --webui-port=8088
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
