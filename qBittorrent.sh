@@ -30,6 +30,7 @@ WebUI\Password_PBKDF2="@ByteArray(vMQ1gRacoWeG9CCWbQes1Q==:A63s5lX9y+Agutul89glK
 '           >           /.config/qBittorrent/qBittorrent.conf
 systemctl   restart     qbittorrent-nox
 crontab     -l
+sleep       1s
 netstat     -plnt
 echo        "用户名hhj，密码fengkuang，默认下载目录/Downloads/"
 
