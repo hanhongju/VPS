@@ -12,4 +12,4 @@ systemctl     restart     sshd
 
 
 
-# 更改root密码，开启密码登录 @ all systems
+# 更改root密码，开启密码登录
