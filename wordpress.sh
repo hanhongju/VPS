@@ -58,7 +58,7 @@ mysql_secure_installation
 
 
 
-setupLNMP () {
+setup_LNMP () {
 apt     -y    install    wget
 wget    https://raw.githubusercontent.com/hanhongju/VPS/refs/heads/main/wordpress.sh    -O    setup.sh
 bash    setup.sh
@@ -68,7 +68,7 @@ bash    setup.sh
 
 
 
-directbackup () {
+direct_backup () {
 mysqldump     -uroot         -pfengkuang     wordpress       >        /srv/wordpress/wordpress.sql
 tar           --file         /root/wordpress.tar      --directory     /srv/     --create    ./wordpress/
 
@@ -77,7 +77,7 @@ tar           --file         /root/wordpress.tar      --directory     /srv/     
 
 
 
-importbackup () {
+import_backup () {
 tar           --file         /root/wordpress.tar     --directory      /srv/     --extract
 mysql         -uroot         -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 mysql         -uroot         -pfengkuang     -e      "DROP DATABASE wordpress"
@@ -92,13 +92,22 @@ mysql         -uroot         -pfengkuang     wordpress   <    /srv/wordpress/wor
 
 
 
-installanewsite () {
+install_a_newsite () {
 wget          -c             https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm            -rf            /srv/wordpress/
 tar           --file         latest-zh_CN.tar.gz     --directory      /srv/     --extract
 # 网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod         --recursive    777            /srv/wordpress/
 chown         --recursive    www-data       /srv/wordpress/
+
+}
+
+
+
+
+suspend_server () {
+systemctl   disable      nginx
+systemctl   stop     nginx
 
 }
 
