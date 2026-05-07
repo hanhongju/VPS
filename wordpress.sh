@@ -109,7 +109,7 @@ reverse_proxy_host () {
 apt    -y   update
 apt    -y   install     nginx net-tools
 systemctl   enable      nginx
-rm     -f   /etc/nginx/sites-enabled/default
+# rm   -f   /etc/nginx/sites-enabled/default
 echo        '
 server{
 server_name www.hanhongju.com;
@@ -125,7 +125,7 @@ proxy_set_header Referer $scheme://$proxy_name;
 proxy_set_header Accept-Encoding "";
 }
 }
-'           >           /etc/nginx/sites-enabled/www
+'           >           /etc/nginx/sites-enabled/Reverse_Proxy
 systemctl   restart     nginx
 nginx       -t
 netstat     -plnt
