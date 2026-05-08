@@ -106,8 +106,8 @@ chown         --recursive    www-data       /srv/wordpress/
 
 
 suspend_server () {
-systemctl   disable      nginx
-systemctl   stop     nginx
+systemctl     disable      nginx
+systemctl     stop         nginx
 
 }
 
