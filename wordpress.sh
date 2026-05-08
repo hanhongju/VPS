@@ -108,9 +108,11 @@ chown         --recursive    www-data       /srv/wordpress/
 suspend_and_resume_server () {
 systemctl     disable      nginx
 systemctl     stop         nginx
+netstat       -plnt
 
 systemctl     enable       nginx
 systemctl     restart      nginx
+netstat       -plnt
 
 }
 
