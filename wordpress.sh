@@ -9,9 +9,9 @@ echo    '
 0 4 * * *     mysqldump     -uroot         -pfengkuang     wordpress       >        /srv/wordpress/wordpress.sql
 0 6 * * *     tar           --file         /root/wordpress.tar      --directory     /srv/     --create    ./wordpress/
 0 7 * * *     rm            -rf            /root/wordpressbackup/
-0 8 * * *     mkdir         -p             /root/wordpressbackup/
-0 9 * * *     cp            /root/wordpress.tar       /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar
-2 9 * * *     certbot       renew
+1 7 * * *     mkdir         -p             /root/wordpressbackup/
+0 8 * * *     cp            /root/wordpress.tar       /root/wordpressbackup/$(date +\%Y-\%m-\%d)-wordpress.tar
+0 9 * * *     certbot       renew
 '       |     crontab
 echo '
 server {
