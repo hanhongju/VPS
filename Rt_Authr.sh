@@ -16,4 +16,6 @@ killall   -9     AliYunDun AliYunDunUpdate AliYunDunMonitor AliSecCheck
 rm        -rf    /usr/local/aegis/
 
 
+
+
 # 更改root密码，开启密码登录
