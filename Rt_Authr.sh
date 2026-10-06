@@ -13,6 +13,7 @@ systemctl     restart     sshd
 # 阻止阿里安全软件运行
 ps aux    |      grep ali
 ps aux    |      grep argusagent
+apt       -y     update
 apt       -y     install psmisc
 killall   -9     AliYunDun AliYunDunUpdate AliYunDunMonitor AliSecCheck argusagent aliyun-service.symlink
 rm        -rf    /usr/local/aegis/
