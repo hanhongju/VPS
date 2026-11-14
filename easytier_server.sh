@@ -1,8 +1,8 @@
-apt  update
-apt install  -y   unzip curl
-curl   -sL   "https://github.com/EasyTier/EasyTier/releases/download/v2.6.4/easytier-linux-x86_64-v2.6.4.zip"   -o   easytier-linux-x86_64.zip
-unzip        easytier-linux-x86_64.zip
-cp     -r    ./easytier-linux-x86_64/.      /usr/local/bin/
+apt    update
+apt    install   -y    unzip curl
+curl   -sL       "https://github.com/EasyTier/EasyTier/releases/download/v2.6.4/easytier-linux-x86_64-v2.6.4.zip"   -o   easytier-linux-x86_64.zip
+unzip            easytier-linux-x86_64.zip
+cp     -r        ./easytier-linux-x86_64/.      /usr/local/bin/
 
 
 systemctl     stop      easytier
