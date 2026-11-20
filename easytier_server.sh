@@ -5,7 +5,6 @@ unzip            easytier-linux-x86_64.zip
 cp     -r        ./easytier-linux-x86_64/.      /usr/local/bin/
 
 
-systemctl     stop      easytier
 echo '
 [Unit]
 Description=EasyTier Service
@@ -21,6 +20,7 @@ Environment=TOKIO_CONSOLE=1
 [Install]
 WantedBy=multi-user.target
 '  >   /etc/systemd/system/easytier.service
+systemctl     daemon-reload
 systemctl     restart      easytier
 sleep   1s
 netstat       -plnt
